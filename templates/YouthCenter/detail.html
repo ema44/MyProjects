@@ -1,0 +1,12 @@
+{% extends 'YouthCenter/dashboard.html' %}
+{% block content %}
+<h1>{{ totalcenters.center_name }}</h1>
+<p>{{ totalcenters.user }}</p>
+{% if user == object.user %}
+		<div>
+			<a class="btn btn-secondary btn-sm" href="{% url 'update-center' object.id %}">Edit</a>
+			<a class="btn btn-danger btn-sm" href="{% url 'delete-center' object.id %}">Delete</a>
+		</div>
+	{% endif %}
+<h1><a class="btn btn-secondary btn-sm" href="{% url 'viewall-center' %}">backToallView</a></h1>
+{% endblock content %}

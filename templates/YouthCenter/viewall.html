@@ -1,0 +1,19 @@
+{% extends 'YouthCenter/dashboard.html' %}
+{% block content %}
+<ul>
+<!-- Iterate over object_list -->
+{% for item in totalcenters %}
+<!-- Display Objects -->
+<li>{{ item.center_name }}</li>
+<li>{{ item.user }}</li>
+    <li>{{ item.id }}</li>
+    {% if user == item.user %}
+    <li><a href="{% url 'detail-center' item.id %}"> show detail</a></li>
+    {%endif%}
+<hr/>
+<!-- If objet_list is empty -->
+{% empty %}
+<li>No objects yet.</li>
+{% endfor %}
+</ul>
+{% endblock content %}

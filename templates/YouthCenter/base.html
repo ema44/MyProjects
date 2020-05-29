@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+ <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <link rel="stylesheet"
+href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css"
+type="text/css" media="all"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript">
+</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"
+type="text/javascript"></script>
+
+
+
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/bootstrap.css' %}">
+
+<!-- Scripts -->
+    <script src="{% static 'blog/jquery.js' %}"></script>
+    <script src="{% static 'blog/bootstrap.js' %}"></script>
+
+	<title>
+		Sample of Django {% if title %}
+		- {{title}}
+		{% else  %}
+
+		{% endif %}
+	</title>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Amanuel Django Website</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'home-center' %}">Home</a></li>
+        <li><a href="/admin/auth/user">Admin</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'signup' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+{% block content%} {% endblock %}
+
+
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="content-section">
+        <h3>Our Sidebar</h3>
+        <p class='text-muted'>You can put any information here you'd like.<p>
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-right">amanuels site</li>
+            <li class="list-group-item list-group-item-right">how to bring dramatic change</li>
+            <li class="list-group-item list-group-item-right">Calendars</li>
+            <li class="list-group-item list-group-item-right">etc</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+<script type="text/javascript">
+    /*
+      $('.ajaxContent').append('<table class="table">    <thead><th>Game</th><th>Ticket Code</th><th>Full Name</th><th>Phone Number</th><th>Paid Amount</th><!-- <th>Home/Away Status</th><th>Payment Date</th> --><th></th></thead>{% for object in objects %}<tr><td>{{object.game}}</td><td>{{object.ticketCode}}</td><td>{{object.fullName}}</td><td>{{object.phoneNumber}}</td><td>{{object.paidAmount}}</td><!-- <td>{{object.homeOrAwayStatus}}</td><td>{{object.date|date:'F d, Y'}}</td> --><td><a href="{% url 'payment-records-detail' object.pk %}" style="color: green">Detail</a></td></tr>{% endfor %}</table>')
+      */
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+     {% extends 'YouthCenter/dashboard.html'%}
+     {% block content %}
+      {% if amanuel %}
+         <strong>Your profile was saved.</strong>
+      {% endif %}
+      
+      {% if not amanuel %}
+         <strong>Your profile was not saved.</strong>
+      {% endif %}
+     {% endblock %}
